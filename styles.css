@@ -32,5 +32,5 @@ img {
 }
 
 :target {
-	background-color: goldenrod;
+	background-color: light-dark(goldenrod, steelblue);
 }
