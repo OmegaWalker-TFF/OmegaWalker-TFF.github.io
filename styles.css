@@ -1,0 +1,20 @@
+body {
+	font-size: 20px;
+}
+
+p {
+	break-inside: avoid;
+}
+
+img {
+	width: 450px;
+}
+
+.auto-columns {
+	column-width: 450px;
+}
+
+.nome {
+	font-size: larger;
+	font-weight: bold;
+}
