@@ -1,8 +1,19 @@
-body {
-	font-size: 20px;
+:root {
+  /* Tells the browser the site supports both light and dark themes */
+  color-scheme: light dark; 
+  
+  /* Syntax: light-dark(light-mode-value, dark-mode-value) */
+  --bg-color: light-dark(#ffffff, #121212);
+  --text-color: light-dark(#333333, #f5f5f5);
 }
 
-p {
+body {
+	font-size: 20px;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+p, figure {
 	break-inside: avoid;
 }
 

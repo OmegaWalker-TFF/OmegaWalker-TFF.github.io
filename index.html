@@ -1,175 +1,335 @@
 <!doctype html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Cardápio</title>
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <h2>Cardápio</h2>
-    <div class="auto-columns">
-      <p style="margin-top: 0px;">
-        <span class="nome">Pink Lemonade</span><br />
-        Limão siciliano, grenadine, xarope simples, club soda (90/25/25/150)
-      </p>
 
-      <p>
-        <span class="nome">Tequila Sunrise</span><br />
-        Tequila, suco de laranja, grenadine (30/90/15)
-      </p>
+<head>
+  <meta charset="UTF-8">
+  <title>Cardápio</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script>
+    window.addEventListener('error', function (event) {
+      if (event.target.tagName.toLowerCase() === 'img') {
+        event.target.onerror = null;
+        event.target.src = './images/missing.png';
+      }
+    }, true); // <--- 'true' enables the capture phase, which is required
+  </script>
+</head>
 
-      <p>
-        <span class="nome">Margarita</span><br />
-        Tequila, triple sec, limão (50/20/15)
-      </p>
+<body>
+  <h2>Cardápio</h2>
+  <div class="auto-columns">
+    <p style="margin-top: 0px;">
+      <a id="recipe-pink-lemonade" href="#img-pink-lemonade" class="nome">Pink Lemonade</a><br>
+      Limão siciliano, grenadine, xarope simples, club soda (90/25/25/150)
+    </p>
 
-      <p>
-        <span class="nome">Tootsie Roll</span><br />
-        Suco de laranja, licor de café (2/1)
-      </p>
+    <p>
+      <a id="recipe-tequila-sunrise" href="#img-tequila-sunrise" class="nome">Tequila Sunrise</a><br>
+      Tequila, suco de laranja, grenadine (30/90/15)
+    </p>
 
-      <p>
-        <span class="nome">Orgasm</span><br />
-        Licor de café, Baileys, vodka (1/1/1)
-      </p>
+    <p>
+      <a id="recipe-margarita" href="#img-margarita" class="nome">Margarita</a><br>
+      Tequila, triple sec, limão (50/20/15)
+    </p>
 
-      <p>
-        <span class="nome">Toro Bravo</span><br />
-        Licor de café, tequila (1/2)
-      </p>
+    <p>
+      <a id="recipe-tootsie-roll" href="#img-tootsie-roll" class="nome">Tootsie Roll</a><br>
+      Suco de laranja, licor de café (2/1)
+    </p>
 
-      <p>
-        <span class="nome">Black Russian</span><br />
-        Licor de café, vodka (2/5)
-      </p>
+    <p>
+      <a id="recipe-orgasm" href="#img-orgasm" class="nome">Orgasm</a><br>
+      Licor de café, Baileys, vodka (1/1/1)
+    </p>
 
-      <p>
-        <span class="nome">White Russian</span><br />
-        Licor de café, vodka, Leite (1/1/2)
-      </p>
+    <p>
+      <a id="recipe-toro-bravo" href="#img-toro-bravo" class="nome">Toro Bravo</a><br>
+      Licor de café, tequila (1/2)
+    </p>
 
-      <p>
-        <span class="nome">B-52</span><br />
-        Licor de café, Baileys, triple sec (1/1/1)
-      </p>
+    <p>
+      <a id="recipe-black-russian" href="#img-black-russian" class="nome">Black Russian</a><br>
+      Licor de café, vodka (2/5)
+    </p>
 
-      <p>
-        <span class="nome">Screwdriver</span><br />
-        Vodka, suco de laranja (2/3)
-      </p>
+    <p>
+      <a id="recipe-white-russian" href="#img-white-russian" class="nome">White Russian</a><br>
+      Licor de café, vodka, Leite (1/1/2)
+    </p>
 
-      <p>
-        <span class="nome">Sex on the Beach</span><br />
-        Vodka, licor de pêssego, suco de cranberry, suco de laranja (4/2/4/4)
-      </p>
+    <p>
+      <a id="recipe-b52" href="#img-b52" class="nome">B-52</a><br>
+      Licor de café, Baileys, triple sec (1/1/1)
+    </p>
 
-      <p>
-        <span class="nome">Kamikaze</span><br />
-        Vodka, triple sec, limão (1/1/1)
-      </p>
+    <p>
+      <a id="recipe-screwdriver" href="#img-screwdriver" class="nome">Screwdriver</a><br>
+      Vodka, suco de laranja (2/3)
+    </p>
 
-      <p>
-        <span class="nome">Lemon Drop Martini</span><br />
-        Vodka cítrica, limão siciliano, xarope simples (4/2/1)
-      </p>
+    <p>
+      <a id="recipe-sex-on-the-beach" href="#img-sex-on-the-beach" class="nome">Sex on the Beach</a><br>
+      Vodka, licor de pêssego, suco de cranberry, suco de laranja (4/2/4/4)
+    </p>
 
-      <p>
-        <span class="nome">Cosmopolitan</span><br />
-        Vodka cítrica, Triple sec, limão, suco de cranberry (40/15/15/30)
-      </p>
+    <p>
+      <a id="recipe-kamikaze" href="#img-kamikaze" class="nome">Kamikaze</a><br>
+      Vodka, triple sec, limão (1/1/1)
+    </p>
 
-      <p>
-        <span class="nome">Berryka</span><br />
-        Vodka, suco de cranberry, suco de blueberry (1/1/1)
-      </p>
+    <p>
+      <a id="recipe-lemon-drop-martini" href="#img-lemon-drop-martini" class="nome">Lemon Drop Martini</a><br>
+      Vodka cítrica, limão siciliano, xarope simples (4/2/1)
+    </p>
 
-      <p>
-        <span class="nome">Daiquiri</span><br />
-        Rum, limão, xarope simples (60/30/40)
-      </p>
+    <p>
+      <a id="recipe-cosmopolitan" href="#img-cosmopolitan" class="nome">Cosmopolitan</a><br>
+      Vodka cítrica, Triple sec, limão, suco de cranberry (40/15/15/30)
+    </p>
 
-      <p>
-        <span class="nome">Cuba Libre</span><br />
-        Rum, coca cola, limão (5/12)
-      </p>
+    <p>
+      <a id="recipe-berryka" href="#img-berryka" class="nome">Berryka</a><br>
+      Vodka, suco de cranberry, suco de blueberry (1/1/1)
+    </p>
 
-      <p>
-        <span class="nome">Between the Sheets</span><br />
-        Rum, Cognac, triple sec, limão siciliano (20/20/20/15)
-      </p>
+    <p>
+      <a id="recipe-daiquiri" href="#img-daiquiri" class="nome">Daiquiri</a><br>
+      Rum, limão, xarope simples (60/30/40)
+    </p>
 
-      <p>
-        <span class="nome">Caipirinha</span><br />
-        Cachaça, limão, açúcar
-      </p>
+    <p>
+      <a id="recipe-cuba-libre" href="#img-cuba-libre" class="nome">Cuba Libre</a><br>
+      Rum, coca cola, limão (5/12)
+    </p>
 
-      <p>
-        <span class="nome">Cacharita</span><br />
-        Cachaça, triple sec, limão siciliano (3/3/1)
-      </p>
+    <p>
+      <a id="recipe-between-the-sheets" href="#img-between-the-sheets" class="nome">Between the Sheets</a><br>
+      Rum, Cognac, triple sec, limão siciliano (20/20/20/15)
+    </p>
 
-      <p>
-        <span class="nome">Tom Collins</span><br />
-        Gin, limão siciliano, xarope simples, club soda (60/25/15/50)
-      </p>
+    <p>
+      <a id="recipe-caipirinha" href="#img-caipirinha" class="nome">Caipirinha</a><br>
+      Cachaça, limão, açúcar
+    </p>
 
-      <p>
-        <span class="nome">Gin Tônica</span><br />
-        Gin, água tônica
-      </p>
+    <p>
+      <a id="recipe-cacharita" href="#img-cacharita" class="nome">Cacharita</a><br>
+      Cachaça, triple sec, limão siciliano (3/3/1)
+    </p>
 
-      <p>
-        <span class="nome">Fitzgerald</span><br />
-        Gin, limão siciliano, xarope simples, Angostura
-      </p>
+    <p>
+      <a id="recipe-tom-collins" href="#img-tom-collins" class="nome">Tom Collins</a><br>
+      Gin, limão siciliano, xarope simples, club soda (60/25/15/50)
+    </p>
 
-      <p>
-        <span class="nome">Long Island Iced Tea</span><br />
-        Vodka, gin, rum, tequila, triple sec, limão siciliano, xarope simples, Coca (15/15/15/15/15/25/30/*)
-      </p>
+    <p>
+      <a id="recipe-gin-tonica" href="#img-gin-tonica" class="nome">Gin Tônica</a><br>
+      Gin, água tônica
+    </p>
 
-      <p>
-        <span class="nome">Adios Motherfucker</span><br />
-        Vodka, gin, rum, tequila, curaçau azul, limão, limão siciliano, xarope simples, Sprite
-        (15/15/15/15/15/15/15/25/*)
-      </p>
+    <p>
+      <a id="recipe-fitzgerald" href="#img-fitzgerald" class="nome">Fitzgerald</a><br>
+      Gin, limão siciliano, xarope simples, Angostura
+    </p>
 
-      <p>
-        <span class="nome">French connection</span><br />
-        Cognac, Grand Marnier (3/1)
-      </p>
+    <p>
+      <a id="recipe-long-island-iced-tea" href="#img-long-island-iced-tea" class="nome">Long Island Iced Tea</a><br>
+      Vodka, gin, rum, tequila, triple sec, limão siciliano, xarope simples, Coca (15/15/15/15/15/25/30/*)
+    </p>
 
-      <p>
-        <span class="nome">Lady's Sidecar</span><br />
-        Cognac, Triple sec, limão siciliano, suco de laranja (45/30/30/10)
-      </p>
+    <p>
+      <a id="recipe-adios-motherfucker" href="#img-adios-motherfucker" class="nome">Adios Motherfucker</a><br>
+      Vodka, gin, rum, tequila, curaçau azul, limão, limão siciliano, xarope simples, Sprite
+      (15/15/15/15/15/15/15/25/*)
+    </p>
 
-      <p>
-        <span class="nome">Old Fashioned</span><br />
-        Bourbon, xarope simples, Angostura (4/1/*)
-      </p>
-    </div>
-    <h2>Fotos</h2>
-    <div class="auto-columns">
-      <figure style="margin-top: 0px;">
-        <img src="./images/ladys-sidecar.jpg" alt="Lady's Sidecar" />
-        <figcaption>Lady's Sidecar</figcaption>
+    <p>
+      <a id="recipe-french-connection" href="#img-french-connection" class="nome">French Connection</a><br>
+      Cognac, Grand Marnier (3/1)
+    </p>
+
+    <p>
+      <a id="recipe-ladys-sidecar" href="#img-ladys-sidecar" class="nome">Lady's Sidecar</a><br>
+      Cognac, Triple sec, limão siciliano, suco de laranja (45/30/30/10)
+    </p>
+
+    <p>
+      <a id="recipe-old-fashioned" href="#img-old-fashioned" class="nome">Old Fashioned</a><br>
+      Bourbon, xarope simples, Angostura (4/1/*)
+    </p>
+  </div>
+  <h2>Fotos</h2>
+  <div class="auto-columns">
+    <a href="#recipe-pink-lemonade">
+      <figure id="img-pink-lemonade">
+        <img src="./images/pink-lemonade.png" alt="Pink Lemonade">
+        <figcaption>Pink Lemonade</figcaption>
       </figure>
-
-      <figure>
-        <img src="./images/between-the-sheets.jpg" alt="Between the Sheets" />
-        <figcaption>Between the Sheets</figcaption>
+    </a>
+    <a href="#recipe-tequila-sunrise">
+      <figure id="img-tequila-sunrise">
+        <img src="./images/tequila-sunrise.jpg" alt="Tequila Sunrise">
+        <figcaption>Tequila Sunrise</figcaption>
       </figure>
-
-      <figure>
-        <img src="./images/screwdriver.jpg" alt="Screwdriver" />
-        <figcaption>Screwdriver</figcaption>
+    </a>
+    <a href="#recipe-margarita">
+      <figure id="img-margarita">
+        <img src="./images/margarita.jpg" alt="Margarita">
+        <figcaption>Margarita</figcaption>
       </figure>
-
-      <figure>
-        <img src="./images/tootsie-roll.jpg" alt="Tootsie Roll" />
+    </a>
+    <a href="#recipe-tootsie-roll">
+      <figure id="img-tootsie-roll">
+        <img src="./images/tootsie-roll.jpg" alt="Tootsie Roll">
         <figcaption>Tootsie Roll</figcaption>
       </figure>
-    </div>
-  </body>
+    </a>
+    <a href="#recipe-orgasm">
+      <figure id="img-orgasm">
+        <img src="./images/orgasm.jpg" alt="Orgasm">
+        <figcaption>Orgasm</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-toro-bravo">
+      <figure id="img-toro-bravo">
+        <img src="./images/toro-bravo.jpg" alt="Toro Bravo">
+        <figcaption>Toro Bravo</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-black-russian">
+      <figure id="img-black-russian">
+        <img src="./images/black-russian.jpg" alt="Black Russian">
+        <figcaption>Black Russian</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-white-russian">
+      <figure id="img-white-russian">
+        <img src="./images/white-russian.jpg" alt="White Russian">
+        <figcaption>White Russian</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-b52">
+      <figure id="img-b52">
+        <img src="./images/b52.jpg" alt="B-52">
+        <figcaption>B-52</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-screwdriver">
+      <figure id="img-screwdriver">
+        <img src="./images/screwdriver.jpg" alt="Screwdriver">
+        <figcaption>Screwdriver</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-sex-on-the-beach">
+      <figure id="img-sex-on-the-beach">
+        <img src="./images/sex-on-the-beach.jpg" alt="Sex on the Beach">
+        <figcaption>Sex on the Beach</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-kamikaze">
+      <figure id="img-kamikaze">
+        <img src="./images/kamikaze.jpg" alt="Kamikaze">
+        <figcaption>Kamikaze</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-lemon-drop-martini">
+      <figure id="img-lemon-drop-martini">
+        <img src="./images/lemon-drop-martini.jpg" alt="Lemon Drop Martini">
+        <figcaption>Lemon Drop Martini</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-cosmopolitan">
+      <figure id="img-cosmopolitan">
+        <img src="./images/cosmopolitan.jpg" alt="Cosmopolitan">
+        <figcaption>Cosmopolitan</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-berryka">
+      <figure id="img-berryka">
+        <img src="./images/berryka.jpg" alt="Berryka">
+        <figcaption>Berryka</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-daiquiri">
+      <figure id="img-daiquiri">
+        <img src="./images/daiquiri.jpg" alt="Daiquiri">
+        <figcaption>Daiquiri</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-cuba-libre">
+      <figure id="img-cuba-libre">
+        <img src="./images/cuba-libre.jpg" alt="Cuba Libre">
+        <figcaption>Cuba Libre</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-between-the-sheets">
+      <figure id="img-between-the-sheets">
+        <img src="./images/between-the-sheets.jpg" alt="Between the Sheets">
+        <figcaption>Between the Sheets</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-caipirinha">
+      <figure id="img-caipirinha">
+        <img src="./images/caipirinha.jpg" alt="Caipirinha">
+        <figcaption>Caipirinha</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-cacharita">
+      <figure id="img-cacharita">
+        <img src="./images/cacharita.jpg" alt="Cacharita">
+        <figcaption>Cacharita</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-tom-collins">
+      <figure id="img-tom-collins">
+        <img src="./images/tom-collins.jpg" alt="Tom Collins">
+        <figcaption>Tom Collins</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-gin-tonica">
+      <figure id="img-gin-tonica">
+        <img src="./images/gin-tonica.jpg" alt="Gin Tônica">
+        <figcaption>Gin Tônica</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-fitzgerald">
+      <figure id="img-fitzgerald">
+        <img src="./images/fitzgerald.jpg" alt="Fitzgerald">
+        <figcaption>Fitzgerald</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-long-island-iced-tea">
+      <figure id="img-long-island-iced-tea">
+        <img src="./images/long-island-iced-tea.jpg" alt="Long Island Iced Tea">
+        <figcaption>Long Island Iced Tea</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-adios-motherfucker">
+      <figure id="img-adios-motherfucker">
+        <img src="./images/adios-motherfucker.jpg" alt="Adios Motherfucker">
+        <figcaption>Adios Motherfucker</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-french-connection">
+      <figure id="img-french-connection">
+        <img src="./images/french-connection.jpg" alt="French Connection">
+        <figcaption>French Connection</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-ladys-sidecar">
+      <figure id="img-ladys-sidecar">
+        <img src="./images/ladys-sidecar.jpg" alt="Lady's Sidecar">
+        <figcaption>Lady's Sidecar</figcaption>
+      </figure>
+    </a>
+    <a href="#recipe-old-fashioned">
+      <figure id="img-old-fashioned">
+        <img src="./images/old-fashioned.jpg" alt="Old fashioned">
+        <figcaption>Old fashioned</figcaption>
+      </figure>
+    </a>
+  </div>
+</body>
+
 </html>
